@@ -8,7 +8,7 @@ const eventsData = [
         category: "environmental",
         description: "Join us for a tree plantation drive to make our campus greener. We aim to plant 100 saplings in this event.",
         organizers: "Environment Club & NSS Unit",
-        image: "/api/placeholder/400/300"
+        image: "planttrees.jpg"
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const eventsData = [
         category: "health",
         description: "Annual blood donation camp organized in collaboration with City Blood Bank. Your small contribution can save lives.",
         organizers: "NSS Health Wing",
-        image: "/api/placeholder/400/300"
+        image: "blooddonation.jpg"
     },
     {
         id: 3,
@@ -28,7 +28,7 @@ const eventsData = [
         category: "education",
         description: "Workshop aimed at teaching basic computer skills to underprivileged children from nearby communities.",
         organizers: "NSS Education Wing",
-        image: "/api/placeholder/400/300"
+        image: "DigitalLiteracy.jpg"
     },
     {
         id: 4,
@@ -38,7 +38,7 @@ const eventsData = [
         category: "environmental",
         description: "On Earth Day, let's clean our surroundings and spread awareness about waste management.",
         organizers: "NSS Environmental Wing",
-        image: "/api/placeholder/400/300"
+        image: "cleanup.jpg"
     },
     {
         id: 5,
@@ -48,7 +48,7 @@ const eventsData = [
         category: "social",
         description: "Rally to spread awareness about road safety rules and the importance of following traffic regulations.",
         organizers: "NSS & Traffic Police",
-        image: "/api/placeholder/400/300"
+        image: "roadsafety.jpg"
     },
     {
         id: 6,
@@ -58,7 +58,7 @@ const eventsData = [
         category: "health",
         description: "Free health check-up camp for students and staff. Various tests and consultations will be available.",
         organizers: "NSS Health Wing & Medical College",
-        image: "/api/placeholder/400/300"
+        image: "healthcamp.jpg"
     },
     {
         id: 7,

@@ -2,7 +2,7 @@
 const eventsData = [
     {
         id: 1,
-        title: "Tree Plantation Drive",
+        title: "TREE PLANTATION DRIVE",
         date: "2025-03-25",
         location: "College Campus",
         category: "environmental",
@@ -12,7 +12,7 @@ const eventsData = [
     },
     {
         id: 2,
-        title: "Blood Donation Camp",
+        title: "BLOOD DONATION CAMP",
         date: "2025-04-05",
         location: "College Auditorium",
         category: "health",
@@ -22,7 +22,7 @@ const eventsData = [
     },
     {
         id: 3,
-        title: "Digital Literacy Workshop",
+        title: "DIGITAL LITERACY WORKSHOP",
         date: "2025-04-15",
         location: "Computer Lab",
         category: "education",
@@ -32,7 +32,7 @@ const eventsData = [
     },
     {
         id: 4,
-        title: "Cleanliness Drive",
+        title: "CLEANLINESS DRIVE",
         date: "2025-04-22",
         location: "College Surroundings",
         category: "environmental",
@@ -42,7 +42,7 @@ const eventsData = [
     },
     {
         id: 5,
-        title: "Awareness Rally on Road Safety",
+        title: "AWARENESS RALLY ON ROAD SAFETY",
         date: "2025-05-01",
         location: "City Roads",
         category: "social",
@@ -52,7 +52,7 @@ const eventsData = [
     },
     {
         id: 6,
-        title: "Health Check-up Camp",
+        title: "HEALTH CHECK-UP CAMP",
         date: "2025-05-10",
         location: "College Ground",
         category: "health",
@@ -62,33 +62,33 @@ const eventsData = [
     },
     {
         id: 7,
-        title: "Career Counseling for School Students",
+        title: "CAREER COUNSELING FOR SCHOOL STUDENTS",
         date: "2025-05-20",
         location: "Government School",
         category: "education",
         description: "Career counseling session for high school students to help them make informed decisions about their future.",
         organizers: "NSS Education Wing",
-        image: "/api/placeholder/400/300"
+        image: "CAREER-COUNSELING.jpg"
     },
     {
         id: 8,
-        title: "Donation Drive for Orphanage",
+        title: "DONATION DRIVE FOR ORPHANAGE",
         date: "2025-06-01",
         location: "College Campus",
         category: "social",
         description: "Collection of clothes, books, and other essentials for children at the local orphanage.",
         organizers: "NSS Social Service Wing",
-        image: "/api/placeholder/400/300"
+        image: "Orphan.jpg"
     },
     {
         id: 9,
-        title: "Yoga Day Celebration",
+        title: "YOGA DAY CELEBRATION",
         date: "2025-06-21",
         location: "College Ground",
         category: "health",
         description: "Join us for International Yoga Day celebrations. Learn yoga from experts and understand its benefits.",
         organizers: "NSS Health Wing & Yoga Club",
-        image: "/api/placeholder/400/300"
+        image: "international-yoga-day.jpg"
     }
 ];
 

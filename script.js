@@ -5,7 +5,7 @@ const eventsData = [
         title: "TREE PLANTATION DRIVE",
         date: "2025-03-25",
         location: "College Campus",
-        category: "environmental",
+        category: "Environmental",
         description: "Join us for a tree plantation drive to make our campus greener. We aim to plant 100 saplings in this event.",
         organizers: "Environment Club & NSS Unit",
         image: "planttrees.jpg"
@@ -15,7 +15,7 @@ const eventsData = [
         title: "BLOOD DONATION CAMP",
         date: "2025-04-05",
         location: "College Auditorium",
-        category: "health",
+        category: "Health",
         description: "Annual blood donation camp organized in collaboration with City Blood Bank. Your small contribution can save lives.",
         organizers: "NSS Health Wing",
         image: "blooddonation.jpg"
@@ -25,7 +25,7 @@ const eventsData = [
         title: "DIGITAL LITERACY WORKSHOP",
         date: "2025-04-15",
         location: "Computer Lab",
-        category: "education",
+        category: "Education",
         description: "Workshop aimed at teaching basic computer skills to underprivileged children from nearby communities.",
         organizers: "NSS Education Wing",
         image: "DigitalLiteracy.jpg"
@@ -35,7 +35,7 @@ const eventsData = [
         title: "CLEANLINESS DRIVE",
         date: "2025-04-22",
         location: "College Surroundings",
-        category: "environmental",
+        category: "Environmental",
         description: "On Earth Day, let's clean our surroundings and spread awareness about waste management.",
         organizers: "NSS Environmental Wing",
         image: "cleanup.jpg"
@@ -45,7 +45,7 @@ const eventsData = [
         title: "AWARENESS RALLY ON ROAD SAFETY",
         date: "2025-05-01",
         location: "City Roads",
-        category: "social",
+        category: "Social",
         description: "Rally to spread awareness about road safety rules and the importance of following traffic regulations.",
         organizers: "NSS & Traffic Police",
         image: "roadsafety.jpg"
@@ -55,7 +55,7 @@ const eventsData = [
         title: "HEALTH CHECK-UP CAMP",
         date: "2025-05-10",
         location: "College Ground",
-        category: "health",
+        category: "Health",
         description: "Free health check-up camp for students and staff. Various tests and consultations will be available.",
         organizers: "NSS Health Wing & Medical College",
         image: "healthcamp.jpg"
@@ -65,7 +65,7 @@ const eventsData = [
         title: "CAREER COUNSELING FOR SCHOOL STUDENTS",
         date: "2025-05-20",
         location: "Government School",
-        category: "education",
+        category: "Education",
         description: "Career counseling session for high school students to help them make informed decisions about their future.",
         organizers: "NSS Education Wing",
         image: "CAREER-COUNSELING.jpg"
@@ -75,7 +75,7 @@ const eventsData = [
         title: "DONATION DRIVE FOR ORPHANAGE",
         date: "2025-06-01",
         location: "College Campus",
-        category: "social",
+        category: "Social",
         description: "Collection of clothes, books, and other essentials for children at the local orphanage.",
         organizers: "NSS Social Service Wing",
         image: "Orphan.jpg"
@@ -85,7 +85,7 @@ const eventsData = [
         title: "YOGA DAY CELEBRATION",
         date: "2025-06-21",
         location: "College Ground",
-        category: "health",
+        category: "Health",
         description: "Join us for International Yoga Day celebrations. Learn yoga from experts and understand its benefits.",
         organizers: "NSS Health Wing & Yoga Club",
         image: "international-yoga-day.jpg"

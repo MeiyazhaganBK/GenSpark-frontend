@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College NSS Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="NSS-logo.jpg" alt="NSS Logo">
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="active">Home</a>
+                <a href="#">Events</a>
+                <a href="#">Activities</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="auth-buttons" id="authButtons">
+                <button id="loginBtn" class="btn-primary">Login</button>
+                <button id="logoutBtn" class="btn-outline" style="display: none;">Logout</button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form id="loginForm" class="auth-form">
+                <h2>Login to NSS Portal</h2>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <p>New volunteer? <a href="#" id="showRegisterForm">Register here</a></p>
+            </form>
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <h2>Register as NSS Volunteer</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="college">College</label>
+                    <input type="text" id="college" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+                <p>Already registered? <a href="#" id="showLoginForm">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="sona-logo.png" alt="NSS Logo">
+            <h1>National Service Scheme</h1>
+            <p>Not Me But You</p>
+            <button class="btn-primary" id="exploreBtn">Explore Activities</button>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard container">
+        <h2>Upcoming Events</h2>
+        
+        <!-- Filters and Search -->
+        <div class="filters-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search events...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="filter-options">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="environmental">Environmental</option>
+                    <option value="health">Health Camp</option>
+                    <option value="education">Education</option>
+                    <option value="social">Social Service</option>
+                </select>
+                
+                <select id="sortOptions">
+                    <option value="date-new">Newest First</option>
+                    <option value="date-old">Oldest First</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Events Cards -->
+        <div class="events-container">
+            <div class="events-list" id="eventsList">
+                <!-- This will be populated with JavaScript -->
+            </div>
+            
+            <div class="pagination">
+                <button id="prevPage" class="btn-outline">Previous</button>
+                <div id="pageNumbers">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                </div>
+                <button id="nextPage" class="btn-outline">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Event Title</h2>
+            <div id="modalContent">
+                <!-- Event details will be populated here -->
+                <div class="event-info">
+                    <p><strong>Date:</strong> <span id="eventDate">March 15, 2025</span></p>
+                    <p><strong>Location:</strong> <span id="eventLocation">College Campus</span></p>
+                    <p><strong>Category:</strong> <span id="eventCategory">Environmental</span></p>
+                </div>
+                <div class="event-description">
+                    <h3>About the Event</h3>
+                    <p id="eventDescription">Event description will appear here.</p>
+                </div>
+                <div class="event-organizers">
+                    <h3>Organizers</h3>
+                    <p id="eventOrganizers">Organizers information will appear here.</p>
+                </div>
+            </div>
+            <button class="btn-primary" id="registerEventBtn">Register for Event</button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification">
+        <p id="notificationMessage">Operation successful!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About NSS</h3>
+                    <p>The National Service Scheme (NSS) is an Indian government-sponsored public service program conducted by the Ministry of Youth Affairs and Sports.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Activities</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: nss@college.edu</p>
+                    <p>Phone: +91 1234567890</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 College NSS Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

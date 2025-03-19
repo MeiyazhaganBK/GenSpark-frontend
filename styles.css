@@ -304,16 +304,19 @@ a:hover {
 }
 
 /* Auth Form Styles */
+/* Auth form container */
 .auth-form {
     width: 100%;
 }
 
+/* Form heading */
 .auth-form h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
+/* Form group styling */
 .form-group {
     margin-bottom: 15px;
 }
@@ -324,6 +327,7 @@ a:hover {
     color: #555;
 }
 
+/* Input field styling */
 .form-group input {
     width: 100%;
     padding: 10px;
@@ -332,14 +336,69 @@ a:hover {
     outline: none;
 }
 
-.auth-form button {
+/* Select dropdown styling */
+.form-group select {
     width: 100%;
-    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    cursor: pointer;
 }
 
+/* Custom dropdown arrow */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+}
+
+/* Hover and focus states for select */
+.form-group select:hover {
+    border-color: #999;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Paragraph styling */
 .auth-form p {
     text-align: center;
     margin-top: 15px;
+    color: #555;
 }
 
 /* Event Detail Modal */

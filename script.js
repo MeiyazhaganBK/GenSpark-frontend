@@ -88,7 +88,7 @@ const eventsData = [
         category: "Health",
         description: "Join us for International Yoga Day celebrations. Learn yoga from experts and understand its benefits.",
         organizers: "NSS Health Wing & Yoga Club",
-        image: "roadsafety.jpg"
+        image: "international-yoga-day.jpg"
     }
 ];
 

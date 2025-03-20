@@ -321,43 +321,49 @@ function showEventDetails(eventId) {
 // Filter events based on search, category, and sort
 function filterEvents() {
     const searchTerm = searchInput.value.toLowerCase();
-    const category = categoryFilter.value;
+    const category = categoryFilter.value.toLowerCase(); // Ensure case-insensitive comparison
     const sortOption = sortOptions.value;
-    
+
     // Filter by search term and category
     filteredEvents = eventsData.filter(event => {
         const matchSearch = event.title.toLowerCase().includes(searchTerm) || 
                            event.description.toLowerCase().includes(searchTerm);
-        const matchCategory = category === '' || event.category === category;
+        const matchCategory = category === '' || event.category.toLowerCase() === category; // Ensure case-insensitive comparison
         
         return matchSearch && matchCategory;
     });
-    
-    // Sort events
+
+    // Sort events  
     sortEvents(sortOption);
-    
+
     // Reset to page 1
     currentPage = 1;
-    
+
     // Update UI
     displayEvents();
     setupPagination();
 }
-
 // Sort events
 function sortEvents(sortOption) {
     switch (sortOption) {
         case 'date-new':
+            // Sort by date (newest first)
             filteredEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
             break;
         case 'date-old':
+            // Sort by date (oldest first)
             filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
             break;
         case 'name-asc':
+            // Sort by title (A-Z)
             filteredEvents.sort((a, b) => a.title.localeCompare(b.title));
             break;
         case 'name-desc':
+            // Sort by title (Z-A)
             filteredEvents.sort((a, b) => b.title.localeCompare(a.title));
+            break;
+        default:
+            // Default sorting (no change)
             break;
     }
 }

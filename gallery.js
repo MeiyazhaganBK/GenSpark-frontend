@@ -125,3 +125,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial display of all gallery items
     displayGallery(galleryData);
 });
+
+
+
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', function () {
+            // Toggle the display of the navigation links
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none'; // Hide the menu
+            } else {
+                navLinks.style.display = 'flex'; // Show the menu
+            }
+        });
+    }
+});

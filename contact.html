@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - College NSS Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #34495e;
+        }
+
+        /* Contact Info Styles */
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-info h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="NSS-logo.jpg" alt="NSS Logo">
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="Events.html">Events</a>
+                <a href="#">Activities</a>
+                <a href="#">Gallery</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            <div class="auth-buttons" id="authButtons">
+                <button id="loginBtn" class="btn-primary">Login</button>
+                <button id="logoutBtn" class="btn-outline" style="display: none;">Logout</button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Page Content -->
+<div style="width: 80%; margin: 50px auto; background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <h1 style="text-align: center; color: #2c3e50; margin-bottom: 20px;">Contact Us</h1>
+
+    <!-- Contact Form -->
+    <form style="display: flex; flex-direction: column;">
+        <label for="name" style="font-weight: bold; margin-bottom: 5px;">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required style="padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+
+        <label for="email" style="font-weight: bold; margin-bottom: 5px;">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required style="padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+
+        <label for="message" style="font-weight: bold; margin-bottom: 5px;">Message:</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required style="padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; resize: vertical; height: 150px;"></textarea>
+
+        <button type="submit" style="padding: 10px 20px; background-color: #2c3e50; color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Send Message</button>
+    </form>
+
+    <!-- Contact Information -->
+    <div style="margin-top: 30px;">
+        <h2 style="color: #2c3e50; margin-bottom: 10px;">Our Contact Details</h2>
+        <p><strong>Email:</strong> <a href="mailto:info@example.com" style="color: #3498db; text-decoration: none;">info@example.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+1234567890" style="color: #3498db; text-decoration: none;">+123 456 7890</a></p>
+        <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About NSS</h3>
+                    <p>The National Service Scheme (NSS) is an Indian government-sponsored public service program conducted by the Ministry of Youth Affairs and Sports.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Events.html" >Events</a></li>
+                        <li><a href="#">Activities</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: nss@college.edu</p>
+                    <p>Phone: +91 1234567890</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 College NSS Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

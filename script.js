@@ -1,166 +1,132 @@
-// Sample activities data
-const activitiesData = [
+// Sample event data
+const eventsData = [
     {
         id: 1,
-        title: "VILLAGE ADOPTION PROGRAM",
-        date: "2025-02-15",
-        location: "Kodaikanal Village",
-        category: "social",
-        description: "We adopted a village near Kodaikanal and conducted various awareness programs, health checkups, and infrastructure development initiatives to improve the quality of life for the villagers.",
-        outcomes: "Improved sanitation facilities, health awareness, and educational support for children in the village. Created a sustainable development plan for the village that will be implemented over the next two years.",
-        volunteers: "NSS Social Service Wing & Rural Development Team",
-        participants: 45,
-        impact: "High",
-        images: ["village-adoption1.jpg", "village-adoption2.jpg", "village-adoption3.jpg"]
+        title: "Tree Plantation Drive",
+        date: "2025-03-25",
+        location: "College Campus",
+        category: "Environmental",
+        description: "Join us for a tree plantation drive to make our campus greener. We aim to plant 100 saplings in this event.",
+        organizers: "Environment Club & NSS Unit",
+        image: "planttrees.jpg"
     },
     {
         id: 2,
-        title: "PLASTIC FREE CAMPUS DRIVE",
-        date: "2025-01-20",
-        location: "College Campus",
-        category: "environmental",
-        description: "A week-long campaign to make our campus plastic-free. Activities included awareness sessions, collection of plastic waste, and installation of plastic collection bins around campus.",
-        outcomes: "Collected over 200 kg of plastic waste, installed 15 segregation bins across campus, and successfully reduced plastic usage in campus by 70% through awareness and alternate solutions.",
-        volunteers: "NSS Environmental Wing & Eco Club",
-        participants: 75,
-        impact: "High",
-        images: ["plastic-free1.jpg", "plastic-free2.jpg", "plastic-free3.jpg"]
+        title: "Blood Donation Camp",
+        date: "2025-04-05",
+        location: "College Auditorium",
+        category: "Health",
+        description: "Annual blood donation camp organized in collaboration with City Blood Bank. Your small contribution can save lives.",
+        organizers: "NSS Health Wing",
+        image: "blooddonation.jpg"
     },
     {
         id: 3,
-        title: "LITERACY DRIVE FOR RURAL CHILDREN",
-        date: "2024-12-10",
-        location: "Nearby Villages",
-        category: "education",
-        description: "A month-long literacy program for children in rural areas. NSS volunteers visited villages every weekend to teach children basic reading, writing, and arithmetic skills.",
-        outcomes: "Improved literacy skills for 120 children across 5 villages. Created a sustainable education support system with local teachers and volunteers.",
-        volunteers: "NSS Education Wing",
-        participants: 30,
-        impact: "Medium",
-        images: ["literacy1.jpg", "literacy2.jpg", "literacy3.jpg"]
+        title: "Digital Literacy Workshop",
+        date: "2025-04-15",
+        location: "Computer Lab",
+        category: "Education",
+        description: "Workshop aimed at teaching basic computer skills to underprivileged children from nearby communities.",
+        organizers: "NSS Education Wing",
+        image: "DigitalLiteracy.jpg"
     },
     {
         id: 4,
-        title: "DENGUE AWARENESS CAMPAIGN",
-        date: "2024-11-15",
-        location: "College and Surrounding Areas",
-        category: "health",
-        description: "A campaign to spread awareness about dengue prevention and control. Volunteers conducted door-to-door awareness sessions and organized cleanup drives to eliminate mosquito breeding grounds.",
-        outcomes: "Reached over 500 households with dengue prevention information. Eliminated potential breeding sites in college surroundings. Distributed 1000 pamphlets on dengue prevention.",
-        volunteers: "NSS Health Wing & Medical Students",
-        participants: 50,
-        impact: "High",
-        images: ["dengue1.jpg", "dengue2.jpg", "dengue3.jpg"]
+        title: "Cleanliness Drive",
+        date: "2025-04-22",
+        location: "College Surroundings",
+        category: "Environmental",
+        description: "On Earth Day, let's clean our surroundings and spread awareness about waste management.",
+        organizers: "NSS Environmental Wing",
+        image: "cleanup.jpg"
     },
     {
         id: 5,
-        title: "DISASTER MANAGEMENT WORKSHOP",
-        date: "2024-10-05",
-        location: "College Auditorium",
-        category: "disaster",
-        description: "A two-day workshop on disaster management and preparedness. Experts from disaster management agencies conducted sessions on various aspects of disaster response and rescue operations.",
-        outcomes: "Trained 120 students in basic disaster response techniques. Created a college disaster response team with 25 well-trained volunteers.",
-        volunteers: "NSS Disaster Management Wing & Civil Defense",
-        participants: 120,
-        impact: "Medium",
-        images: ["disaster1.jpg", "disaster2.jpg", "disaster3.jpg"]
+        title: "Awareness Rally on Road Safety",
+        date: "2025-05-01",
+        location: "City Roads",
+        category: "Social",
+        description: "Rally to spread awareness about road safety rules and the importance of following traffic regulations.",
+        organizers: "NSS & Traffic Police",
+        image: "roadsafety.jpg"
     },
     {
         id: 6,
-        title: "RAINWATER HARVESTING PROJECT",
-        date: "2024-09-20",
-        location: "College Campus",
-        category: "environmental",
-        description: "Implementation of rainwater harvesting systems across the campus to conserve water and recharge groundwater. The project included installation of collection systems and creation of recharge pits.",
-        outcomes: "Installed 5 rainwater harvesting systems across campus. Estimated to conserve approximately 500,000 liters of water annually.",
-        volunteers: "NSS Environmental Wing & Civil Engineering Department",
-        participants: 40,
-        impact: "High",
-        images: ["rainwater1.jpg", "rainwater2.jpg", "rainwater3.jpg"]
+        title: "Health Check-up Camp",
+        date: "2025-05-10",
+        location: "College Ground",
+        category: "Health",
+        description: "Free health check-up camp for students and staff. Various tests and consultations will be available.",
+        organizers: "NSS Health Wing & Medical College",
+        image: "healthcamp.jpg"
     },
     {
         id: 7,
-        title: "ORPHANAGE VISIT AND SUPPORT",
-        date: "2024-08-15",
-        location: "City Orphanage",
-        category: "social",
-        description: "A visit to the local orphanage to spend time with children and provide them with educational materials, clothes, and essentials. The volunteers also organized recreational activities for the children.",
-        outcomes: "Provided support to 45 children with educational materials, clothes, and essentials. Established a regular monthly visit program for continuous support.",
-        volunteers: "NSS Social Service Wing",
-        participants: 25,
-        impact: "Medium",
-        images: ["orphanage1.jpg", "orphanage2.jpg", "orphanage3.jpg"]
+        title: "Career Counseling for School Students",
+        date: "2025-05-20",
+        location: "Government School",
+        category: "Education",
+        description: "Career counseling session for high school students to help them make informed decisions about their future.",
+        organizers: "NSS Education Wing",
+        image: "CAREER-COUNSELING.jpg"
     },
     {
         id: 8,
-        title: "DRUG ABUSE PREVENTION AWARENESS",
-        date: "2024-07-10",
-        location: "College and Nearby Schools",
-        category: "health",
-        description: "A series of awareness programs on drug abuse prevention targeting college students and school children. The campaign included educational sessions, street plays, and distribution of awareness materials.",
-        outcomes: "Conducted awareness sessions for 1000+ students across 5 schools and our college. Created a peer counseling system for at-risk students.",
-        volunteers: "NSS Health Wing & Psychology Department",
-        participants: 35,
-        impact: "High",
-        images: ["drug1.jpg", "drug2.jpg", "drug3.jpg"]
+        title: "Donation Drive for Orphanage",
+        date: "2025-06-01",
+        location: "College Campus",
+        category: "Social",
+        description: "Collection of clothes, books, and other essentials for children at the local orphanage.",
+        organizers: "NSS Social Service Wing",
+        image: "Orphan.jpg"
     },
     {
         id: 9,
-        title: "ELDER CARE PROGRAM",
-        date: "2024-06-25",
-        location: "Old Age Home",
-        category: "social",
-        description: "A support program for the elderly residents of a local old age home. Volunteers spent time with the residents, organized health checkups, and helped with maintenance of the facility.",
-        outcomes: "Provided companionship and support to 30 elderly residents. Organized health checkups and donated essential supplies to the facility.",
-        volunteers: "NSS Social Service Wing & Medical Students",
-        participants: 20,
-        impact: "Medium",
-        images: ["elder1.jpg", "elder2.jpg", "elder3.jpg"]
+        title: "Yoga Day Celebration",
+        date: "2025-06-21",
+        location: "College Ground",
+        category: "Health",
+        description: "Join us for International Yoga Day celebrations. Learn yoga from experts and understand its benefits.",
+        organizers: "NSS Health Wing & Yoga Club",
+        image: "international-yoga-day.jpg"
     }
 ];
 
 // Global variables
 let currentPage = 1;
-const activitiesPerPage = 3;
-let filteredActivities = [...activitiesData];
+const eventsPerPage = 3;
+let filteredEvents = [...eventsData];
 let isLoggedIn = false;
-let isAdmin = false;
-let currentCategory = 'all';
 
 // DOM Elements
-const activitiesList = document.getElementById('activitiesList');
+const eventsList = document.getElementById('eventsList');
 const prevPageBtn = document.getElementById('prevPage');
 const nextPageBtn = document.getElementById('nextPage');
 const pageNumbers = document.getElementById('pageNumbers');
 const loginBtn = document.getElementById('loginBtn');
 const logoutBtn = document.getElementById('logoutBtn');
 const loginModal = document.getElementById('loginModal');
-const activityModal = document.getElementById('activityModal');
-const addActivityModal = document.getElementById('addActivityModal');
+const eventModal = document.getElementById('eventModal');
 const notificationElement = document.getElementById('notification');
 const notificationMessage = document.getElementById('notificationMessage');
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
-const yearFilter = document.getElementById('yearFilter');
+const categoryFilter = document.getElementById('categoryFilter');
 const sortOptions = document.getElementById('sortOptions');
-const categoryTabs = document.getElementById('categoryTabs');
-const adminActions = document.getElementById('adminActions');
-const addActivityBtn = document.getElementById('addActivityBtn');
 const showRegisterFormLink = document.getElementById('showRegisterForm');
 const showLoginFormLink = document.getElementById('showLoginForm');
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
 const mobileMenu = document.getElementById('mobileMenu');
 const navLinks = document.getElementById('navLinks');
-const downloadCertificateBtn = document.getElementById('downloadCertificate');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     // Check if user is logged in
     checkLoginStatus();
     
-    // Load activities
-    displayActivities();
+    // Load events
+    displayEvents();
     
     // Setup pagination
     setupPagination();
@@ -184,8 +150,7 @@ function setupEventListeners() {
     document.querySelectorAll('.close-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             loginModal.style.display = 'none';
-            activityModal.style.display = 'none';
-            addActivityModal.style.display = 'none';
+            eventModal.style.display = 'none';
         });
     });
     
@@ -194,11 +159,8 @@ function setupEventListeners() {
         if (e.target === loginModal) {
             loginModal.style.display = 'none';
         }
-        if (e.target === activityModal) {
-            activityModal.style.display = 'none';
-        }
-        if (e.target === addActivityModal) {
-            addActivityModal.style.display = 'none';
+        if (e.target === eventModal) {
+            eventModal.style.display = 'none';
         }
     });
     
@@ -231,73 +193,34 @@ function setupEventListeners() {
     prevPageBtn.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
-            displayActivities();
+            displayEvents();
             updatePaginationUI();
         }
     });
     
     nextPageBtn.addEventListener('click', () => {
-        const totalPages = Math.ceil(filteredActivities.length / activitiesPerPage);
+        const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
         if (currentPage < totalPages) {
             currentPage++;
-            displayActivities();
+            displayEvents();
             updatePaginationUI();
         }
     });
     
     // Search
     searchBtn.addEventListener('click', () => {
-        filterActivities();
+        filterEvents();
     });
     
     searchInput.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
-            filterActivities();
+            filterEvents();
         }
     });
     
     // Filters
-    yearFilter.addEventListener('change', filterActivities);
-    sortOptions.addEventListener('change', filterActivities);
-    
-    // Category tabs
-    categoryTabs.addEventListener('click', (e) => {
-        if (e.target.classList.contains('category-tab')) {
-            // Remove active class from all tabs
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Add active class to clicked tab
-            e.target.classList.add('active');
-            
-            // Filter activities by category
-            currentCategory = e.target.getAttribute('data-category');
-            filterActivities();
-        }
-    });
-    
-    // Add activity button (for admins)
-    addActivityBtn.addEventListener('click', () => {
-        addActivityModal.style.display = 'block';
-    });
-    
-    // Add activity form submission
-    document.getElementById('addActivityForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        addNewActivity();
-    });
-    
-    // Download certificate button
-    downloadCertificateBtn.addEventListener('click', () => {
-        if (isLoggedIn) {
-            showNotification('Certificate downloaded successfully!');
-        } else {
-            showNotification('Please login to download certificates');
-            activityModal.style.display = 'none';
-            loginModal.style.display = 'block';
-        }
-    });
+    categoryFilter.addEventListener('change', filterEvents);
+    sortOptions.addEventListener('change', filterEvents);
     
     // Mobile menu toggle
     mobileMenu.addEventListener('click', () => {
@@ -305,164 +228,143 @@ function setupEventListeners() {
     });
 }
 
-// Display activities with pagination
-function displayActivities() {
-    const startIndex = (currentPage - 1) * activitiesPerPage;
-    const endIndex = startIndex + activitiesPerPage;
-    const currentActivities = filteredActivities.slice(startIndex, endIndex);
+// Display events with pagination
+function displayEvents() {
+    const startIndex = (currentPage - 1) * eventsPerPage;
+    const endIndex = startIndex + eventsPerPage;
+    const currentEvents = filteredEvents.slice(startIndex, endIndex);
     
-    // Clear previous activities
-    activitiesList.innerHTML = '';
+    // Clear previous events
+    eventsList.innerHTML = '';
     
-    if (currentActivities.length === 0) {
-        activitiesList.innerHTML = '<p class="no-activities">No activities found matching your criteria.</p>';
+    if (currentEvents.length === 0) {
+        eventsList.innerHTML = '<p class="no-events">No events found matching your criteria.</p>';
         return;
     }
     
-    // Display activities
-    currentActivities.forEach(activity => {
-        const activityCard = document.createElement('div');
-        activityCard.className = 'activity-card';
+    // Display events
+    currentEvents.forEach(event => {
+        const eventCard = document.createElement('div');
+        eventCard.className = 'event-card';
         
         // Format date
-        const activityDate = new Date(activity.date);
-        const formattedDate = activityDate.toLocaleDateString('en-US', {
+        const eventDate = new Date(event.date);
+        const formattedDate = eventDate.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
         
-        activityCard.innerHTML = `
-            <img src="${activity.images[0]}" alt="${activity.title}">
-            <div class="activity-card-content">
-                <h3>${activity.title}</h3>
-                <div class="activity-meta">
+        eventCard.innerHTML = `
+            <img src="${event.image}" alt="${event.title}">
+            <div class="event-card-content">
+                <h3>${event.title}</h3>
+                <div class="event-meta">
                     <span>${formattedDate}</span>
-                    <span>${activity.category.charAt(0).toUpperCase() + activity.category.slice(1)}</span>
+                    <span>${event.category}</span>
                 </div>
-                <p>${activity.description.substring(0, 100)}...</p>
-                <div class="activity-stats">
-                    <span><i class="fas fa-users"></i> ${activity.participants} Participants</span>
-                    <span><i class="fas fa-chart-line"></i> ${activity.impact} Impact</span>
-                </div>
-                <button class="btn-outline view-details" data-id="${activity.id}">View Details</button>
+                <p>${event.description.substring(0, 100)}...</p>
+                <button class="btn-outline view-details" data-id="${event.id}">View Details</button>
             </div>
         `;
         
-        activitiesList.appendChild(activityCard);
+        eventsList.appendChild(eventCard);
     });
     
     // Add event listeners to view details buttons
     document.querySelectorAll('.view-details').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const activityId = parseInt(e.target.getAttribute('data-id'));
-            showActivityDetails(activityId);
+            const eventId = parseInt(e.target.getAttribute('data-id'));
+            showEventDetails(eventId);
         });
     });
 }
 
-// Show activity details in modal
-function showActivityDetails(activityId) {
-    const activity = activitiesData.find(activity => activity.id === activityId);
-    if (!activity) return;
+// Show event details in modal
+function showEventDetails(eventId) {
+    const event = eventsData.find(event => event.id === eventId);
+    if (!event) return;
     
     // Format date
-    const activityDate = new Date(activity.date);
-    const formattedDate = activityDate.toLocaleDateString('en-US', {
+    const eventDate = new Date(event.date);
+    const formattedDate = eventDate.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
     });
     
     // Update modal content
-    document.getElementById('modalTitle').textContent = activity.title;
-    document.getElementById('activityDate').textContent = formattedDate;
-    document.getElementById('activityLocation').textContent = activity.location;
-    document.getElementById('activityCategory').textContent = activity.category.charAt(0).toUpperCase() + activity.category.slice(1);
-    document.getElementById('activityParticipants').textContent = activity.participants;
-    document.getElementById('activityImpact').textContent = activity.impact;
-    document.getElementById('activityDescription').textContent = activity.description;
-    document.getElementById('activityOutcomes').textContent = activity.outcomes;
-    document.getElementById('activityVolunteers').textContent = activity.volunteers;
-    
-    // Update main image
-    document.getElementById('activityMainImage').src = activity.images[0];
-    document.getElementById('activityMainImage').alt = activity.title;
-    
-    // Update thumbnails
-    const thumbnailsContainer = document.getElementById('activityThumbnails');
-    thumbnailsContainer.innerHTML = '';
-    
-    activity.images.forEach((image, index) => {
-        const thumbnail = document.createElement('div');
-        thumbnail.className = 'thumbnail';
-        thumbnail.innerHTML = `<img src="${image}" alt="Image ${index + 1}">`;
-        
-        thumbnail.addEventListener('click', () => {
-            document.getElementById('activityMainImage').src = image;
-        });
-        
-        thumbnailsContainer.appendChild(thumbnail);
-    });
-    
-    // Show download certificate button if user participated (for this demo, we'll show it for logged-in users)
-    downloadCertificateBtn.style.display = isLoggedIn ? 'inline-block' : 'none';
+    document.getElementById('modalTitle').textContent = event.title;
+    document.getElementById('eventDate').textContent = formattedDate;
+    document.getElementById('eventLocation').textContent = event.location;
+    document.getElementById('eventCategory').textContent = event.category;
+    document.getElementById('eventDescription').textContent = event.description;
+    document.getElementById('eventOrganizers').textContent = event.organizers;
     
     // Show the modal
-    activityModal.style.display = 'block';
+    eventModal.style.display = 'block';
+    
+    // Event registration button
+    const registerEventBtn = document.getElementById('registerEventBtn');
+    registerEventBtn.addEventListener('click', () => {
+        if (isLoggedIn) {
+            showNotification('You have successfully registered for this event!');
+            eventModal.style.display = 'none';
+        } else {
+            showNotification('Please login to register for events');
+            eventModal.style.display = 'none';
+            loginModal.style.display = 'block';
+        }
+    });
 }
 
-// Filter activities based on search, year, category, and sort
-function filterActivities() {
+// Filter events based on search, category, and sort
+function filterEvents() {
     const searchTerm = searchInput.value.toLowerCase();
-    const year = yearFilter.value;
+    const category = categoryFilter.value;
     const sortOption = sortOptions.value;
     
-    // Filter by search term, year, and category
-    filteredActivities = activitiesData.filter(activity => {
-        const matchSearch = activity.title.toLowerCase().includes(searchTerm) || 
-                           activity.description.toLowerCase().includes(searchTerm);
-        const matchYear = year === '' || activity.date.includes(year);
-        const matchCategory = currentCategory === 'all' || activity.category === currentCategory;
+    // Filter by search term and category
+    filteredEvents = eventsData.filter(event => {
+        const matchSearch = event.title.toLowerCase().includes(searchTerm) || 
+                           event.description.toLowerCase().includes(searchTerm);
+        const matchCategory = category === '' || event.category === category;
         
-        return matchSearch && matchYear && matchCategory;
+        return matchSearch && matchCategory;
     });
     
-    // Sort activities
-    sortActivities(sortOption);
+    // Sort events
+    sortEvents(sortOption);
     
     // Reset to page 1
     currentPage = 1;
     
     // Update UI
-    displayActivities();
+    displayEvents();
     setupPagination();
 }
 
-// Sort activities
-function sortActivities(sortOption) {
+// Sort events
+function sortEvents(sortOption) {
     switch (sortOption) {
         case 'date-new':
-            filteredActivities.sort((a, b) => new Date(b.date) - new Date(a.date));
+            filteredEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
             break;
         case 'date-old':
-            filteredActivities.sort((a, b) => new Date(a.date) - new Date(b.date));
+            filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
             break;
-        case 'impact-high':
-            filteredActivities.sort((a, b) => {
-                const impactValues = { 'High': 3, 'Medium': 2, 'Low': 1 };
-                return impactValues[b.impact] - impactValues[a.impact];
-            });
+        case 'name-asc':
+            filteredEvents.sort((a, b) => a.title.localeCompare(b.title));
             break;
-        case 'participants-high':
-            filteredActivities.sort((a, b) => b.participants - a.participants);
+        case 'name-desc':
+            filteredEvents.sort((a, b) => b.title.localeCompare(a.title));
             break;
     }
 }
 
 // Setup pagination
 function setupPagination() {
-    const totalPages = Math.ceil(filteredActivities.length / activitiesPerPage);
+    const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
     
     pageNumbers.innerHTML = '';
     
@@ -475,7 +377,7 @@ function setupPagination() {
         
         span.addEventListener('click', () => {
             currentPage = i;
-            displayActivities();
+            displayEvents();
             updatePaginationUI();
         });
         
@@ -487,7 +389,7 @@ function setupPagination() {
 
 // Update pagination UI
 function updatePaginationUI() {
-    const totalPages = Math.ceil(filteredActivities.length / activitiesPerPage);
+    const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
     
     prevPageBtn.disabled = currentPage === 1;
     nextPageBtn.disabled = currentPage === totalPages;
@@ -495,57 +397,6 @@ function updatePaginationUI() {
     document.querySelectorAll('#pageNumbers span').forEach((span, index) => {
         span.classList.toggle('active', index + 1 === currentPage);
     });
-}
-
-// Add new activity (for admins)
-function addNewActivity() {
-    // Get form values
-    const title = document.getElementById('activityTitle').value;
-    const category = document.getElementById('activityCategory').value;
-    const date = document.getElementById('activityDate').value;
-    const location = document.getElementById('activityLocation').value;
-    const participants = parseInt(document.getElementById('activityParticipants').value);
-    const impact = document.getElementById('activityImpact').value;
-    const description = document.getElementById('activityDescription').value;
-    const outcomes = document.getElementById('activityOutcomes').value;
-    const volunteers = document.getElementById('activityVolunteers').value;
-    
-    // Simple validation
-    if (!title || !category || !date || !location || !participants || !impact || !description || !outcomes || !volunteers) {
-        showNotification('Please fill all the fields');
-        return;
-    }
-    
-    // Create new activity
-    const newActivity = {
-        id: activitiesData.length + 1,
-        title: title.toUpperCase(),
-        date: date,
-        location: location,
-        category: category,
-        description: description,
-        outcomes: outcomes,
-        volunteers: volunteers,
-        participants: participants,
-        impact: impact,
-        images: ["default1.jpg", "default2.jpg", "default3.jpg"] // Default images
-    };
-    
-    // Add to activities data
-    activitiesData.unshift(newActivity);
-    filteredActivities = [...activitiesData];
-    
-    // Reset form
-    document.getElementById('addActivityForm').reset();
-    
-    // Close modal
-    addActivityModal.style.display = 'none';
-    
-    // Show notification
-    showNotification('Activity added successfully');
-    
-    // Update UI
-    filterActivities();
 }
 
 // Login function
@@ -559,13 +410,9 @@ function login() {
         return;
     }
     
-    // Check if admin (for demo purposes)
-    isAdmin = email.includes('admin');
-    
     // Simulate login (in a real app, this would be a server request)
     localStorage.setItem('nssUserLoggedIn', 'true');
     localStorage.setItem('nssUserEmail', email);
-    localStorage.setItem('nssUserIsAdmin', isAdmin.toString());
     
     // Update UI
     isLoggedIn = true;
@@ -581,12 +428,12 @@ function register() {
     const fullName = document.getElementById('fullName').value;
     const email = document.getElementById('regEmail').value;
     const password = document.getElementById('regPassword').value;
-    const department = document.getElementById('department').value;
+    const college = document.getElementById('college').value;
     const phone = document.getElementById('phone').value;
     
     // Simple validation
-    if (!fullName || !email || !password || !department || !phone) {
-        showNotification('Please fill all the required fields');
+    if (!fullName || !email || !password || !college || !phone) {
+        showNotification('Please fill all the fields');
         return;
     }
     
@@ -594,11 +441,9 @@ function register() {
     localStorage.setItem('nssUserLoggedIn', 'true');
     localStorage.setItem('nssUserEmail', email);
     localStorage.setItem('nssUserName', fullName);
-    localStorage.setItem('nssUserIsAdmin', 'false');
     
     // Update UI
     isLoggedIn = true;
-    isAdmin = false;
     updateAuthUI();
     
     // Close modal and show notification
@@ -612,11 +457,9 @@ function logout() {
     localStorage.removeItem('nssUserLoggedIn');
     localStorage.removeItem('nssUserEmail');
     localStorage.removeItem('nssUserName');
-    localStorage.removeItem('nssUserIsAdmin');
     
     // Update UI
     isLoggedIn = false;
-    isAdmin = false;
     updateAuthUI();
     
     // Show notification
@@ -626,7 +469,6 @@ function logout() {
 // Check login status
 function checkLoginStatus() {
     isLoggedIn = localStorage.getItem('nssUserLoggedIn') === 'true';
-    isAdmin = localStorage.getItem('nssUserIsAdmin') === 'true';
     updateAuthUI();
 }
 
@@ -635,13 +477,9 @@ function updateAuthUI() {
     if (isLoggedIn) {
         loginBtn.style.display = 'none';
         logoutBtn.style.display = 'inline-block';
-        
-        // Show admin actions if user is admin
-        adminActions.style.display = isAdmin ? 'block' : 'none';
     } else {
         loginBtn.style.display = 'inline-block';
         logoutBtn.style.display = 'none';
-        adminActions.style.display = 'none';
     }
 }
 

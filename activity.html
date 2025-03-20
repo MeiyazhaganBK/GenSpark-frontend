@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSS Activities - College NSS Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="NSS-logo.jpg" alt="NSS Logo">
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="Events.html">Events</a>
+                <a href="Activities.html" class="active">Activities</a>
+                <a href="#">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="auth-buttons" id="authButtons">
+                <button id="loginBtn" class="btn-primary">Login</button>
+                <button id="logoutBtn" class="btn-outline" style="display: none;">Logout</button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form id="loginForm" class="auth-form">
+                <h2>Login to NSS Portal</h2>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <p>New volunteer? <a href="#" id="showRegisterForm">Register here</a></p>
+            </form>
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <h2>Register as NSS Volunteer</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <div class="select-wrapper">
+                    <select id="year" required>
+                        <option value="">Select your year</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="section">Section</label>
+                    <div class="select-wrapper">
+                    <select id="section" required>
+                        <option value="">Select your section</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="batch">Batch</label>
+                    <input type="text" id="batch" required placeholder="eg: 2021-2025">
+                </div>
+                <div class="form-group">
+                    <label for="blood-group">Blood group</label>
+                    <div class="select-wrapper">
+                    <select id="blood-group" required>
+                        <option value="">Select your blood group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+                <p>Already registered? <a href="#" id="showLoginForm">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>NSS Activities</h1>
+            <p>Discover our past and ongoing activities that contribute to community service</p>
+        </div>
+    </section>
+
+    <!-- Activity Categories -->
+    <section class="activity-categories container">
+        <h2>Activity Categories</h2>
+        <div class="category-tabs" id="categoryTabs">
+            <button class="category-tab active" data-category="all">All Activities</button>
+            <button class="category-tab" data-category="social">Social Service</button>
+            <button class="category-tab" data-category="environmental">Environmental</button>
+            <button class="category-tab" data-category="health">Health & Wellness</button>
+            <button class="category-tab" data-category="education">Education</button>
+            <button class="category-tab" data-category="disaster">Disaster Management</button>
+        </div>
+    </section>
+
+    <!-- Activity Dashboard -->
+    <section class="dashboard container">
+        <!-- Search and Filter -->
+        <div class="filters-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search activities...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="filter-options">
+                <select id="yearFilter">
+                    <option value="">All Years</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+                
+                <select id="sortOptions">
+                    <option value="date-new">Newest First</option>
+                    <option value="date-old">Oldest First</option>
+                    <option value="impact-high">Highest Impact</option>
+                    <option value="participants-high">Most Participants</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Activities List -->
+        <div class="activities-container">
+            <div class="activities-list" id="activitiesList">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            
+            <div class="pagination">
+                <button id="prevPage" class="btn-outline">Previous</button>
+                <div id="pageNumbers">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                </div>
+                <button id="nextPage" class="btn-outline">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Details Modal -->
+    <div id="activityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Activity Title</h2>
+            <div id="modalContent">
+                <!-- Activity details will be populated here -->
+                <div class="activity-gallery">
+                    <div class="activity-main-image">
+                        <img id="activityMainImage" src="" alt="Activity Image">
+                    </div>
+                    <div class="activity-thumbnails" id="activityThumbnails">
+                        <!-- Thumbnails will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="activity-info">
+                    <p><strong>Date:</strong> <span id="activityDate">March 15, 2025</span></p>
+                    <p><strong>Location:</strong> <span id="activityLocation">College Campus</span></p>
+                    <p><strong>Category:</strong> <span id="activityCategory">Environmental</span></p>
+                    <p><strong>Participants:</strong> <span id="activityParticipants">50</span></p>
+                    <p><strong>Impact:</strong> <span id="activityImpact">High</span></p>
+                </div>
+                <div class="activity-description">
+                    <h3>About the Activity</h3>
+                    <p id="activityDescription">Activity description will appear here.</p>
+                </div>
+                <div class="activity-outcomes">
+                    <h3>Outcomes</h3>
+                    <p id="activityOutcomes">Outcomes will appear here.</p>
+                </div>
+                <div class="activity-volunteers">
+                    <h3>Volunteer Coordinators</h3>
+                    <p id="activityVolunteers">Volunteer information will appear here.</p>
+                </div>
+            </div>
+            <button class="btn-primary" id="downloadCertificate" style="display: none;">Download Certificate</button>
+        </div>
+    </div>
+
+    <!-- Add Activity Modal (for admins) -->
+    <div id="addActivityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Activity</h2>
+            <form id="addActivityForm" class="auth-form">
+                <div class="form-group">
+                    <label for="activityTitle">Activity Title</label>
+                    <input type="text" id="activityTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="activityCategory">Category</label>
+                    <div class="select-wrapper">
+                        <select id="activityCategory" required>
+                            <option value="">Select category</option>
+                            <option value="social">Social Service</option>
+                            <option value="environmental">Environmental</option>
+                            <option value="health">Health & Wellness</option>
+                            <option value="education">Education</option>
+                            <option value="disaster">Disaster Management</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="activityDate">Date</label>
+                    <input type="date" id="activityDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="activityLocation">Location</label>
+                    <input type="text" id="activityLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="activityParticipants">Number of Participants</label>
+                    <input type="number" id="activityParticipants" required>
+                </div>
+                <div class="form-group">
+                    <label for="activityImpact">Impact Level</label>
+                    <div class="select-wrapper">
+                        <select id="activityImpact" required>
+                            <option value="">Select impact level</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="activityDescription">Description</label>
+                    <textarea id="activityDescription" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="activityOutcomes">Outcomes</label>
+                    <textarea id="activityOutcomes" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="activityVolunteers">Volunteer Coordinators</label>
+                    <textarea id="activityVolunteers" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="activityImages">Upload Images</label>
+                    <input type="file" id="activityImages" multiple>
+                </div>
+                <button type="submit" class="btn-primary">Add Activity</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification">
+        <p id="notificationMessage">Operation successful!</p>
+    </div>
+
+    <!-- Admin Floating Button (only visible to admins) -->
+    <div id="adminActions" class="admin-actions" style="display: none;">
+        <button id="addActivityBtn" class="btn-primary">
+            <i class="fas fa-plus"></i> Add Activity
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About NSS</h3>
+                    <p>The National Service Scheme (NSS) is an Indian government-sponsored public service program conducted by the Ministry of Youth Affairs and Sports.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="activity.html" class="active">Activities</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: nss@college.edu</p>
+                    <p>Phone: +91 1234567890</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 College NSS Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="activity.js"></script>
+</body>
+</html>

@@ -499,3 +499,5 @@ function showNotification(message) {
         notificationElement.style.display = 'none';
     }, 3000);
 }
+
+

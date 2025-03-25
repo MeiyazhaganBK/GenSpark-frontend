@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
+    
     // DOM Elements
     const galleryContainer = document.getElementById('galleryContainer');
     const categoryTabs = document.querySelectorAll('.category-tab');
@@ -144,3 +145,239 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+
+
+
+
+    // DOM Elements
+    const activitiesList = document.getElementById('activitiesList');
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const searchInput = document.getElementById('searchInput');
+    const yearFilter = document.getElementById('yearFilter');
+    const sortOptions = document.getElementById('sortOptions');
+    const prevPageBtn = document.getElementById('prevPage');
+    const nextPageBtn = document.getElementById('nextPage');
+    const pageNumbers = document.getElementById('pageNumbers');
+    const activityModal = document.getElementById('activityModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const activityMainImage = document.getElementById('activityMainImage');
+    const activityThumbnails = document.getElementById('activityThumbnails');
+    const activityDate = document.getElementById('activityDate');
+    const activityLocation = document.getElementById('activityLocation');
+    const activityCategory = document.getElementById('activityCategory');
+    const activityParticipants = document.getElementById('activityParticipants');
+    const activityImpact = document.getElementById('activityImpact');
+    const activityDescription = document.getElementById('activityDescription');
+    const activityOutcomes = document.getElementById('activityOutcomes');
+    const activityVolunteers = document.getElementById('activityVolunteers');
+    const downloadCertificate = document.getElementById('downloadCertificate');
+
+    let currentPage = 1;
+    const itemsPerPage = 3; // Display 3 cards per page
+    let isLoggedIn = false;
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if user is logged in
+    checkLoginStatus();
+    
+    // Load events
+    displayEvents();
+    
+    // Setup pagination
+    setupPagination();
+    
+    // Setup event listeners
+    setupEventListeners();
+});
+
+function setupEventListeners() {
+    // Login button
+    loginBtn.addEventListener('click', () => {
+        loginModal.style.display = 'block';
+    });
+    
+    // Logout button
+    logoutBtn.addEventListener('click', () => {
+        logout();
+    });
+    
+    // Close modal buttons
+    document.querySelectorAll('.close-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+            eventModal.style.display = 'none';
+        });
+    });
+    
+    // Close modals when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            loginModal.style.display = 'none';
+        }
+        if (e.target === eventModal) {
+            eventModal.style.display = 'none';
+        }
+    });
+    
+    // Form toggle
+    showRegisterFormLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+    });
+    
+    showLoginFormLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        registerForm.style.display = 'none';
+        loginForm.style.display = 'block';
+    });
+    
+    // Login form submission
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        login();
+    });
+    
+    // Register form submission
+    registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        register();
+    });
+    
+    // Pagination
+    prevPageBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayEvents();
+            updatePaginationUI();
+        }
+    });
+    
+    nextPageBtn.addEventListener('click', () => {
+        const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayEvents();
+            updatePaginationUI();
+        }
+    });
+    
+    // Search
+    searchBtn.addEventListener('click', () => {
+        filterEvents();
+    });
+    
+    searchInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            filterEvents();
+        }
+    });
+    
+    // Filters
+    categoryFilter.addEventListener('change', filterEvents);
+    sortOptions.addEventListener('change', filterEvents);
+    
+    // Mobile menu toggle
+    mobileMenu.addEventListener('click', () => {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+}
+
+// Login function
+function login() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    // Simple validation
+    if (!email || !password) {
+        showNotification('Please enter both email and password');
+        return;
+    }
+    
+    // Simulate login (in a real app, this would be a server request)
+    localStorage.setItem('nssUserLoggedIn', 'true');
+    localStorage.setItem('nssUserEmail', email);
+    
+    // Update UI
+    isLoggedIn = true;
+    updateAuthUI();
+    
+    // Close modal and show notification
+    loginModal.style.display = 'none';
+    showNotification('Login successful');
+}
+
+// Register function
+function register() {
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('regEmail').value;
+    const password = document.getElementById('regPassword').value;
+    const college = document.getElementById('college').value;
+    const phone = document.getElementById('phone').value;
+    
+    // Simple validation
+    if (!fullName || !email || !password || !college || !phone) {
+        showNotification('Please fill all the fields');
+        return;
+    }
+    
+    // Simulate registration (in a real app, this would be a server request)
+    localStorage.setItem('nssUserLoggedIn', 'true');
+    localStorage.setItem('nssUserEmail', email);
+    localStorage.setItem('nssUserName', fullName);
+    
+    // Update UI
+    isLoggedIn = true;
+    updateAuthUI();
+    
+    // Close modal and show notification
+    loginModal.style.display = 'none';
+    showNotification('Registration successful');
+}
+
+// Logout function
+function logout() {
+    // Clear localStorage
+    localStorage.removeItem('nssUserLoggedIn');
+    localStorage.removeItem('nssUserEmail');
+    localStorage.removeItem('nssUserName');
+    
+    // Update UI
+    isLoggedIn = false;
+    updateAuthUI();
+    
+    // Show notification
+    showNotification('Logged out successfully');
+}
+
+// Check login status
+function checkLoginStatus() {
+    isLoggedIn = localStorage.getItem('nssUserLoggedIn') === 'true';
+    updateAuthUI();
+}
+
+// Update authentication UI
+function updateAuthUI() {
+    if (isLoggedIn) {
+        loginBtn.style.display = 'none';
+        logoutBtn.style.display = 'inline-block';
+    } else {
+        loginBtn.style.display = 'inline-block';
+        logoutBtn.style.display = 'none';
+    }
+}
+
+// Show notification
+function showNotification(message) {
+    notificationMessage.textContent = message;
+    notificationElement.style.display = 'block';
+    
+    // Hide notification after 3 seconds
+    setTimeout(() => {
+        notificationElement.style.display = 'none';
+    }, 3000);
+}
+
